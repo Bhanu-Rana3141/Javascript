@@ -1,50 +1,57 @@
-
-// let content = document.querySelector('h1');
-// content.addEventListener('click', function() { content.style.background = 'orange' });
-
-
-// document.addEventListener('click', function() { console.log('You clicked on page')});
-// document.removeEventListener('click', function() { console.log('You clicked on page')})
+// document.addEventListener('click', function() { console.log('I have clicked on document') });
+// document.removeEventListener('click', function() { console.log('I have clicked on document') });
 
 
-// function eventFunction() {
-//     console.log('clicked on page');
-// }
-
-// document.addEventListener('click', eventFunction);
-// document.removeEventListener('click', eventFunction);
-
-// let content = document.querySelector('#wrapper');
-
-// content.addEventListener('click', function(event) {
-//     console.log(event);
-// });
+/* To remove event listener
+1. event target should be same - document
+2. event type should be same - click
+3. function should be same - eventAction
 
 
+function eventAction() {
+    console.log('clicked on document');
+}
+
+document.addEventListener('click', eventAction);
+document.removeEventListener('click', eventAction);
 
 
-// Prevent default actions
-// let links = document.querySelectorAll('a');
-// let thirdLink = links[2];
+// Event Object
 
-// thirdLink.addEventListener('click', function(event) {
-//     event.preventDefault();
-//     console.log("default event prevented");
-// });
+let content = document.querySelector('#wrapper');
+content.addEventListener('click', function(event) {
+    console.log(event);
+});
+*/
 
 
+// Default Action
+
+let links = document.querySelectorAll('a');
+let thirdLink = links[2];
+
+thirdLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log("maza aaya");
+});
+
+
+//  Too many events 
+
+// The code is optimised but having one issue paragraphs have lost their individuality
 
 let myDiv = document.createElement('div');
+function paraStatus(event) {
+    console.log('I have clicked on para');
+}
+myDiv.addEventListener('click', paraStatus);
 
-for(let i=0; i<=20; i++) {
-
+for(let i=1; i<=100; i++) {
     let newElement = document.createElement('p');
-    newElement.textContent = 'i am para ' + i;
+    newElement.textContent = 'I am para ' + i;
 
-    newElement.addEventListener('click', function(event) {
-        console.log(('i have clicked'));
-    });
     myDiv.appendChild(newElement);
 }
 
-document.body.appendChild(myDiv);
+document.body.appendChild(myDiv)
+

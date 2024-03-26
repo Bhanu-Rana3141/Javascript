@@ -1,6 +1,7 @@
 /* 
 
 * JS is used to add functionality in web document
+* single threading language - processing 1 cmd at a time
 * JavaScript is a dynamically typed language – no need to specify data type of variables, the interpreter itself identifies the data type of variable
 * google chrome uses V8 engine
 * created by netscape , names : mocha - liveScript - javaScript

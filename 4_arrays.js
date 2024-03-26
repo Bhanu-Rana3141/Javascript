@@ -161,7 +161,7 @@ arr.forEach(number => console.log(number));
 
 /* Joining array
 let arr = [10, 20, 30, 40, 50];
-let joined = arr.join(',');
+let joined = arr.join(','); // converted into string
 console.log(joined);
 
 
